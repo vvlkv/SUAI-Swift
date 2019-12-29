@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Entity {
+public struct Entity {
     
     let name: String
     let type: Type
     let codes: Code
 }
 
-struct Entities {
+public struct Entities {
     
     let groups: [Entity]
     let auditories: [Entity]

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ScheduleProviderProtocol {
+public protocol ScheduleProviderProtocol {
     func loadEntities(result: @escaping ResultClosure<Entities>)
     func loadSchedule(for entity: Entity, result: @escaping ResultClosure<Schedule>)
 }
