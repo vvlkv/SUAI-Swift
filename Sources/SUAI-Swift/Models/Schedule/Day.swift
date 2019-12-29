@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Day {
+public struct Day {
     
-    let name: String
-    let weekday: Int
-    let pairs: [Pair]
+    public let name: String
+    public let weekday: Int
+    public let pairs: [Pair]
 }

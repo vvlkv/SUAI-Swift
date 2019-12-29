@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Teacher {
+public struct Teacher {
     
-    let name: String
-    let degree: String
+    public let name: String
+    public let degree: String
     
     init(rawName: String) {
         let components = rawName.components(separatedBy: " - ")

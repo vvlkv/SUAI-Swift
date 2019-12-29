@@ -7,5 +7,5 @@
 
 import Foundation
 
-typealias ResultClosure<T> = ((Result<T, Error>) -> Void)
+public typealias ResultClosure<T> = ((Result<T, Error>) -> Void)
 typealias ResultRawDataClosure = ResultClosure<ScheduleLoader.RawData>
