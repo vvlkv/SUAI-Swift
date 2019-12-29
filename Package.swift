@@ -14,11 +14,7 @@ let package = Package(
         .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.0.0")
     ],
     targets: [
-        .target(
-            name: "SUAI-Swift",
-            dependencies: ["SwiftSoup"]),
-        .testTarget(
-            name: "SUAI-SwiftTests",
-            dependencies: ["SUAI-Swift"]),
+        .target(name: "SUAI-Swift", dependencies: ["SwiftSoup"]),
+        .testTarget(name: "SUAI-SwiftTests", dependencies: ["SUAI-Swift"]),
     ]
 )

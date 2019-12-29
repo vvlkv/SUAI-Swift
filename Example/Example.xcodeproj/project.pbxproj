@@ -3,15 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		03AA0F111E87F44CC3C94C1B /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8FB3FFD896F3493E32F284 /* Pods_Example.framework */; };
 		55B7E95323B39B5C008DDA23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B7E95223B39B5C008DDA23 /* AppDelegate.swift */; };
-		55B7E95523B39B5C008DDA23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B7E95423B39B5C008DDA23 /* SceneDelegate.swift */; };
 		55B7E95723B39B5C008DDA23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B7E95623B39B5C008DDA23 /* ViewController.swift */; };
-		55B7E95A23B39B5C008DDA23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B7E95823B39B5C008DDA23 /* Main.storyboard */; };
 		55B7E95C23B39B5F008DDA23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B7E95B23B39B5F008DDA23 /* Assets.xcassets */; };
 		55B7E95F23B39B5F008DDA23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B7E95D23B39B5F008DDA23 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -21,9 +19,7 @@
 		2D8FB3FFD896F3493E32F284 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B7E94F23B39B5C008DDA23 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B7E95223B39B5C008DDA23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		55B7E95423B39B5C008DDA23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		55B7E95623B39B5C008DDA23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		55B7E95923B39B5C008DDA23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55B7E95B23B39B5F008DDA23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B7E95E23B39B5F008DDA23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55B7E96023B39B5F008DDA23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,7 +44,6 @@
 				E486E45BBF1FAD116C65926E /* Pods-Example.debug.xcconfig */,
 				02E355A79AB67ADC21D4C5A6 /* Pods-Example.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -82,9 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				55B7E95223B39B5C008DDA23 /* AppDelegate.swift */,
-				55B7E95423B39B5C008DDA23 /* SceneDelegate.swift */,
 				55B7E95623B39B5C008DDA23 /* ViewController.swift */,
-				55B7E95823B39B5C008DDA23 /* Main.storyboard */,
 				55B7E95B23B39B5F008DDA23 /* Assets.xcassets */,
 				55B7E95D23B39B5F008DDA23 /* LaunchScreen.storyboard */,
 				55B7E96023B39B5F008DDA23 /* Info.plist */,
@@ -103,7 +96,7 @@
 				55B7E94B23B39B5C008DDA23 /* Sources */,
 				55B7E94C23B39B5C008DDA23 /* Frameworks */,
 				55B7E94D23B39B5C008DDA23 /* Resources */,
-				73F7D6B7C7FB3F4AF207CBDC /* [CP] Embed Pods Frameworks */,
+				4855BD5E8B716F35DC96C72C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,14 +147,13 @@
 			files = (
 				55B7E95F23B39B5F008DDA23 /* LaunchScreen.storyboard in Resources */,
 				55B7E95C23B39B5F008DDA23 /* Assets.xcassets in Resources */,
-				55B7E95A23B39B5C008DDA23 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		73F7D6B7C7FB3F4AF207CBDC /* [CP] Embed Pods Frameworks */ = {
+		4855BD5E8B716F35DC96C72C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -209,21 +201,12 @@
 			files = (
 				55B7E95723B39B5C008DDA23 /* ViewController.swift in Sources */,
 				55B7E95323B39B5C008DDA23 /* AppDelegate.swift in Sources */,
-				55B7E95523B39B5C008DDA23 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		55B7E95823B39B5C008DDA23 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				55B7E95923B39B5C008DDA23 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		55B7E95D23B39B5F008DDA23 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -285,7 +268,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -339,7 +322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -357,6 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7HQ3AATVX;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,6 +360,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7HQ3AATVX;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
