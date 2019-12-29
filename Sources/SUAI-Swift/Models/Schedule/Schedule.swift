@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Schedule {
+public struct Schedule {
     
     let entity: Entity
     let semester: [Day]

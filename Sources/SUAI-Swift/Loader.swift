@@ -42,7 +42,7 @@ protocol NewsLoader {
     
 }
 
-enum SUAI {
+public enum SUAI {
     
-    static let schedule = ScheduleProvider()
+    public static let schedule: ScheduleProviderProtocol = ScheduleProvider()
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Type: String, RawRepresentable, CaseIterable {
+public enum Type: String, RawRepresentable, CaseIterable {
     
     enum ScheduleType {
         case session, semester
@@ -64,13 +64,13 @@ enum Type: String, RawRepresentable, CaseIterable {
     }
 }
 
-enum WeekType: String {
+public enum WeekType: String {
     case up
     case down = "dn"
     case full
 }
 
-enum PairType {
+public enum PairType {
     
     private enum Constants {
         static let lection = "Л"
