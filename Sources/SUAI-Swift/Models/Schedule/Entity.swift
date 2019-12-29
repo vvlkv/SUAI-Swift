@@ -9,16 +9,16 @@ import Foundation
 
 public struct Entity {
     
-    let name: String
-    let type: Type
+    public let name: String
+    public let type: Type
     let codes: Code
 }
 
 public struct Entities {
     
-    let groups: [Entity]
-    let auditories: [Entity]
-    let teachers: [Entity]
+    public let groups: [Entity]
+    public let auditories: [Entity]
+    public let teachers: [Entity]
 }
 
 struct Code {
