@@ -8,21 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		03AA0F111E87F44CC3C94C1B /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8FB3FFD896F3493E32F284 /* Pods_Example.framework */; };
+		5514896123CB6EAF000B4BCE /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5514896023CB6EAF000B4BCE /* ScheduleViewController.swift */; };
+		5514896323CB6FEF000B4BCE /* SchedulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5514896223CB6FEF000B4BCE /* SchedulePresenter.swift */; };
 		55B7E95323B39B5C008DDA23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B7E95223B39B5C008DDA23 /* AppDelegate.swift */; };
 		55B7E95C23B39B5F008DDA23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B7E95B23B39B5F008DDA23 /* Assets.xcassets */; };
 		55B7E95F23B39B5F008DDA23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B7E95D23B39B5F008DDA23 /* LaunchScreen.storyboard */; };
-		55C2419223B946EA001FF7D9 /* EntitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C2419123B946EA001FF7D9 /* EntitiesViewController.swift */; };
+		55C03BAD23CB69AA0005CCA9 /* EntitiesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C03BAC23CB69AA0005CCA9 /* EntitiesPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02E355A79AB67ADC21D4C5A6 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		2D8FB3FFD896F3493E32F284 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5514896023CB6EAF000B4BCE /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		5514896223CB6FEF000B4BCE /* SchedulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePresenter.swift; sourceTree = "<group>"; };
 		55B7E94F23B39B5C008DDA23 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B7E95223B39B5C008DDA23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B7E95B23B39B5F008DDA23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B7E95E23B39B5F008DDA23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55B7E96023B39B5F008DDA23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55C2419123B946EA001FF7D9 /* EntitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesViewController.swift; sourceTree = "<group>"; };
+		55C03BAC23CB69AA0005CCA9 /* EntitiesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesPresenter.swift; sourceTree = "<group>"; };
 		E486E45BBF1FAD116C65926E /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,13 +80,23 @@
 		55B7E95123B39B5C008DDA23 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				55B7E95223B39B5C008DDA23 /* AppDelegate.swift */,
+				55C03BAB23CB697C0005CCA9 /* Code */,
 				55B7E95B23B39B5F008DDA23 /* Assets.xcassets */,
 				55B7E95D23B39B5F008DDA23 /* LaunchScreen.storyboard */,
 				55B7E96023B39B5F008DDA23 /* Info.plist */,
-				55C2419123B946EA001FF7D9 /* EntitiesViewController.swift */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		55C03BAB23CB697C0005CCA9 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				55B7E95223B39B5C008DDA23 /* AppDelegate.swift */,
+				5514896023CB6EAF000B4BCE /* ScheduleViewController.swift */,
+				55C03BAC23CB69AA0005CCA9 /* EntitiesPresenter.swift */,
+				5514896223CB6FEF000B4BCE /* SchedulePresenter.swift */,
+			);
+			path = Code;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +213,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55C2419223B946EA001FF7D9 /* EntitiesViewController.swift in Sources */,
+				5514896123CB6EAF000B4BCE /* ScheduleViewController.swift in Sources */,
 				55B7E95323B39B5C008DDA23 /* AppDelegate.swift in Sources */,
+				55C03BAD23CB69AA0005CCA9 /* EntitiesPresenter.swift in Sources */,
+				5514896323CB6FEF000B4BCE /* SchedulePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

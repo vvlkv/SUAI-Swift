@@ -1,5 +1,5 @@
 //
-//  EntitiesViewController.swift
+//  ScheduleViewController.swift
 //  Example
 //
 //  Created by viktor.volkov on 29.12.2019.
@@ -7,21 +7,38 @@
 //
 
 import UIKit
-import SUAI_Swift
 
-class EntitiesViewController: UIViewController {
+protocol ScheduleViewControllerOutput: AnyObject {
+    
+    var view: ScheduleViewControllerInput? { get set }
+    
+    func numberOfSections() -> Int
+    func numberOfRows(in section: Int) -> Int
+    func segmentsForControl() -> [String]
+    func titleForCell(at indexPath: IndexPath) -> String
+    func titleForHeader(in section: Int) -> String?
+    func viewControllerForPresent(at indexPath: IndexPath) -> UIViewController?
+    func didChangeSelectedControl(_ index: Int)
+}
+
+protocol ScheduleViewControllerInput: AnyObject {
+    
+    var output: ScheduleViewControllerOutput? { get set }
+    
+    func reload()
+}
+
+class ScheduleViewController: UIViewController, ScheduleViewControllerInput {
     
     private enum Constants {
-        static let title = "Entities"
         static let cellID = "EntityCellID"
-        static let groups = "groups"
-        static let auditories = "auditories"
-        static let teachers = "teachers"
     }
     
     private enum Layouts {
-        static let edge: CGFloat = 16
+        static let edge: CGFloat = 8
     }
+    
+    var output: ScheduleViewControllerOutput?
     
     private lazy var entitiesTableView: UITableView = {
         let tableView = UITableView()
@@ -38,27 +55,16 @@ class EntitiesViewController: UIViewController {
         return control
     }()
     
-    private var entities: [[Entity]]?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
-        
-        SUAI.schedule.loadEntities {
-            [unowned self] result in
-            
-            if case .success(let entities) = result {
-                self.didLoad(entities: entities)
-            }
-        }
     }
     
     private func setupUI() {
         if #available(iOS 13, *) {
             view.backgroundColor = .systemBackground
         }
-        title = Constants.title
         
         view.addSubview(entitiesControl)
         entitiesControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Layouts.edge).isActive = true
@@ -73,31 +79,53 @@ class EntitiesViewController: UIViewController {
     }
     
     @objc private func didChangeSegmentedValue() {
+        output?.didChangeSelectedControl(entitiesControl.selectedSegmentIndex)
         entitiesTableView.reloadData()
     }
     
-    private func didLoad(entities: Entities) {
-        self.entities = [entities.groups, entities.auditories, entities.teachers]
-        entitiesControl.insertSegment(withTitle: Constants.teachers, at: 0, animated: true)
-        entitiesControl.insertSegment(withTitle: Constants.auditories, at: 0, animated: true)
-        entitiesControl.insertSegment(withTitle: Constants.groups, at: 0, animated: true)
+    func reload() {
+        
+        guard let segments = output?.segmentsForControl() else {
+            return
+        }
+        
+        segments.forEach {
+            title in
+            
+            entitiesControl.insertSegment(withTitle: title, at: .zero, animated: true)
+        }
         entitiesControl.selectedSegmentIndex = 0
-        didChangeSegmentedValue()
+        entitiesTableView.reloadData()
     }
 }
 
-extension EntitiesViewController: UITableViewDataSource {
+extension ScheduleViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return output?.numberOfSections() ?? 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return entities?[entitiesControl.selectedSegmentIndex].count ?? 0
+        return output?.numberOfRows(in: section) ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return output?.titleForHeader(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellID) ?? UITableViewCell(style: .default, reuseIdentifier: Constants.cellID)
-        cell.textLabel?.text = entities?[entitiesControl.selectedSegmentIndex][indexPath.row].name
+        cell.textLabel?.text = output?.titleForCell(at: indexPath)
         return cell
     }
 }
 
-extension EntitiesViewController: UITableViewDelegate {
-    
+extension ScheduleViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let vc = output?.viewControllerForPresent(at: indexPath) else {
+            return
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
