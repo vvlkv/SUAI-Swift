@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct Pair {
+public struct Pair {
     
-    let name: String
-    let time: String
-    let pairType: PairType
-    let weekType: WeekType
-    let auditory: Auditory
-    let teachers: [Teacher]
-    let groups: [String]
+    public let name: String
+    public let time: String
+    public let pairType: PairType
+    public let weekType: WeekType
+    public let auditory: Auditory
+    public let teachers: [Teacher]
+    public let groups: [String]
 }

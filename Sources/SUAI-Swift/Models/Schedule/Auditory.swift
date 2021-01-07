@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Auditory {
+public struct Auditory {
 
-    let number: String
-    let building: String
-    let descripton: String
+    public let number: String
+    public let building: String
+    public let descripton: String
     
     init(raw: String) {
         descripton = raw.replacingOccurrences(of: "– ", with: "")

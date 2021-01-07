@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Group {
+public struct Group {
     
-    let name: String
+    public let name: String
     
     static func groups(from raw: String) -> [String] {
         return (raw.components(separatedBy: ": ")
